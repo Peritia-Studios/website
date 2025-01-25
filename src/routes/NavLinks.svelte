@@ -17,16 +17,14 @@
 <div class="flex items-center justify-start gap-6">
 	<div class="flex items-center">
 		<a href="/" title="Plebis Online" class="flex items-center justify-center">
-			{#if real_route === '/' || real_route === ''}
-				<SpinningIcon bind:rotation={icon_rotation} Icon={PlebisOnlineActive} size={42} />
-			{:else}
-				<SpinningIcon
-					bind:rotation={icon_rotation}
-					Icon={PlebisOnline}
-					size={42}
-					className="opacity-60"
-				/>
-			{/if}
+			<SpinningIcon bind:rotation={icon_rotation} active={real_route === '/' || real_route === ''}>
+				{#snippet Icon()}
+					<PlebisOnline size={42} class="opacity-60" />
+				{/snippet}
+				{#snippet ActiveIcon()}
+					<PlebisOnlineActive size={42} />
+				{/snippet}
+			</SpinningIcon>
 		</a>
 	</div>
 	<div class="flex items-center justify-start gap-6">

@@ -1,15 +1,14 @@
 <script lang="ts">
-	import type { Icon as I } from 'lucide-svelte';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount, onDestroy, type Snippet } from 'svelte';
 
 	interface Props {
-		Icon: typeof I;
-		size?: number;
-		className?: string;
+		Icon: Snippet;
+		ActiveIcon?: Snippet;
+		active?: boolean;
 		rotation?: number;
 	}
 
-	let { Icon, size = 20, className = '', rotation = $bindable(0) }: Props = $props();
+	let { Icon, ActiveIcon, active, rotation = $bindable(0) }: Props = $props();
 
 	let baseSpeed = 30; // Degrees per second (slow)
 	let hoverSpeed = 180; // Degrees per second (fast)
@@ -31,7 +30,7 @@
 	function animate(timestamp: number | null) {
 		if (lastTimestamp !== null && timestamp) {
 			const deltaTime = (timestamp - lastTimestamp) / 1000; // Convert to seconds
-			rotation = (rotation + currentSpeed * deltaTime) % 360;
+			rotation = rotation + currentSpeed * deltaTime;
 		}
 		lastTimestamp = timestamp;
 		animationFrameId = requestAnimationFrame(animate);
@@ -53,6 +52,13 @@
 		updateSpeed();
 	}
 
+	/**
+	 * Handles click event to reset rotation.
+	 */
+	function handleClick() {
+		rotation += 360;
+	}
+
 	// Start the animation loop when the component mounts
 	onMount(() => {
 		animationFrameId = requestAnimationFrame(animate);
@@ -66,10 +72,16 @@
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
 	onmouseenter={handleMouseEnter}
 	onmouseleave={handleMouseLeave}
+	onclick={handleClick}
 	style="display: inline-block; transform: rotate({rotation}deg); transition: transform 0.1s linear;"
 >
-	<Icon {size} class={className} />
+	{#if ActiveIcon && active}
+		{@render ActiveIcon()}
+	{:else}
+		{@render Icon()}
+	{/if}
 </div>

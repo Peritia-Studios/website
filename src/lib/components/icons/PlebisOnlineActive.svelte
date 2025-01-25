@@ -15,7 +15,7 @@
 
 <Icon name="plebis-online-active" {...$$props} strokeWidth={0} viewBox="0 0 24 24" {iconNode}>
 	<linearGradient id="plebisGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-		<stop offset="0%" stop-color="yellow" />
+		<stop offset="40%" stop-color="orange" />
 		<stop offset="100%" stop-color="red" />
 	</linearGradient>
 	<slot />
