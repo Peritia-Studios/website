@@ -1,14 +1,15 @@
 <script lang="ts">
-	import { onMount, onDestroy, type Snippet } from 'svelte';
+	import { Icon as I } from 'lucide-svelte';
+	import { onMount, onDestroy } from 'svelte';
 
 	interface Props {
-		Icon: Snippet;
-		ActiveIcon?: Snippet;
-		active?: boolean;
+		Icon: typeof I;
+		size?: number;
+		className?: string;
 		rotation?: number;
 	}
 
-	let { Icon, ActiveIcon, active, rotation = $bindable(0) }: Props = $props();
+	let { Icon, size = 20, className = '', rotation = $bindable(0) }: Props = $props();
 
 	let baseSpeed = 30; // Degrees per second (slow)
 	let hoverSpeed = 180; // Degrees per second (fast)
@@ -79,9 +80,5 @@
 	onclick={handleClick}
 	style="display: inline-block; transform: rotate({rotation}deg); transition: transform 0.1s linear;"
 >
-	{#if ActiveIcon && active}
-		{@render ActiveIcon()}
-	{:else}
-		{@render Icon()}
-	{/if}
+	<Icon {size} class={className} />
 </div>

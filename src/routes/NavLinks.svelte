@@ -6,7 +6,6 @@
 	import Discord from '$lib/components/icons/Discord.svelte';
 	import BlueSky from '$lib/components/icons/BlueSky.svelte';
 	import Instagram from '$lib/components/icons/Instagram.svelte';
-	import PlebisOnline from '$lib/components/icons/PlebisOnline.svelte';
 	import PlebisOnlineActive from '$lib/components/icons/PlebisOnlineActive.svelte';
 	import SpinningIcon from '$lib/components/icons/SpinningIcon.svelte';
 
@@ -17,28 +16,22 @@
 <div class="flex items-center justify-start gap-6">
 	<div class="flex items-center">
 		<a href="/" title="Plebis Online" class="flex items-center justify-center">
-			<SpinningIcon bind:rotation={icon_rotation} active={real_route === '/' || real_route === ''}>
-				{#snippet Icon()}
-					<PlebisOnline size={42} class="opacity-60" />
-				{/snippet}
-				{#snippet ActiveIcon()}
-					<PlebisOnlineActive size={42} />
-				{/snippet}
-			</SpinningIcon>
+			<SpinningIcon
+				bind:rotation={icon_rotation}
+				Icon={PlebisOnlineActive}
+				size={42}
+				className={real_route === '/' || real_route === '' ? '' : 'opacity-60'}
+			/>
 		</a>
 	</div>
 	<div class="flex items-center justify-start gap-6">
 		<a
-			class="hover:underline {i18n.route(page.url.pathname) === '/updates'
-				? 'bg-gradient-to-br from-yellow-500 to-red-500 box-decoration-clone bg-clip-text text-transparent'
-				: 'opacity-60'}"
+			class="hover:underline {i18n.route(page.url.pathname) === '/updates' ? '' : 'opacity-60'}"
 			href="/updates"
 			title={m.nav_updates()}>{m.nav_updates()}</a
 		>
 		<a
-			class="hover:underline {i18n.route(page.url.pathname) === '/about'
-				? 'bg-gradient-to-br from-yellow-500 to-red-500 box-decoration-clone bg-clip-text text-transparent'
-				: 'opacity-60'}"
+			class="hover:underline {i18n.route(page.url.pathname) === '/about' ? '' : 'opacity-60'}"
 			href="/about"
 			title={m.nav_about()}>{m.nav_about()}</a
 		>

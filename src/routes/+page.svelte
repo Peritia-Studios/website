@@ -7,4 +7,7 @@
 	<meta name="description" content={m.example()} />
 </svelte:head>
 
-<h2 class="h2">{m.example()}</h2>
+<h2 class="h2">Plebis Online</h2>
+<p>
+	{m.example()}
+</p>

@@ -7,6 +7,7 @@
 		@apply h-full;
 	}
 	body {
+		font-family: PlebisOnline;
 		background-image: radial-gradient(
 				at 20% 10%,
 				rgba(var(--color-secondary-500) / 0.075) 0px,
@@ -20,8 +21,26 @@
 		overflow-x: hidden;
 		@apply h-full;
 	}
-	/* p,
+	@font-face {
+		font-family: 'PlebisOnline';
+		src: url('/PlebisOnline.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	p,
+	a,
 	li {
-		@apply text-lg;
-	} */
+		font-size: x-large;
+	}
+	.h2 {
+		font-family: PlebisOnline !important;
+		font-weight: 700;
+		font-size: xx-large;
+	}
+	.h3 {
+		font-family: PlebisOnline !important;
+		font-weight: 700;
+		text-decoration-line: underline;
+		font-size: x-large;
+	}
 }

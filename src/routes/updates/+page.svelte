@@ -7,4 +7,4 @@
 	<meta name="description" content={m.nav_updates()} />
 </svelte:head>
 
-todo
+<p>todo</p>
