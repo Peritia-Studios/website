@@ -22,10 +22,15 @@
 	<p>{m.updates_description()}!</p>
 
 	<Accordion {value} collapsible>
-		{#each updates as { title, version, description }}
+		{#each updates as { title, date, version, description }}
 			<div id={version}>
 				<Accordion.Item value={version} controlHover="hover:preset-tonal-warning">
-					{#snippet control()}<p class="text-glowing">{title}</p>{/snippet}
+					{#snippet control()}
+						<div class="flex items-center justify-between">
+							<p class="text-glowing">{title}</p>
+							<p>{date}</p>
+						</div>
+					{/snippet}
 					{#snippet panel()}<p>{@html description}</p>{/snippet}
 				</Accordion.Item>
 				<hr class="hr" />
