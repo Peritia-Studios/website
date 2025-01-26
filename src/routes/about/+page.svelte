@@ -8,5 +8,8 @@
 </svelte:head>
 
 <div class="content">
-	<p>todo</p>
+	<h2 class="h2">{m.about_journey()}</h2>
+	{@html m.about_journey_text()}
+	<h2 class="h2">{m.about_team()}</h2>
+	{@html m.about_team_text()}
 </div>
