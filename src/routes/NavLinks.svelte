@@ -22,7 +22,7 @@
 			Icon={PlebisOnlineActive}
 			size={42}
 			className={real_route === '/' || real_route === ''
-				? 'drop-shadow-[0_0_6px_#D25401]'
+				? 'drop-shadow-[0px_0px_8px_#D25401]'
 				: 'opacity-80'}
 		/>
 	</a>

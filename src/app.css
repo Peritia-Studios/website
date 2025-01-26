@@ -56,12 +56,14 @@
 	.h2 {
 		font-family: var(--main-font) !important;
 		font-size: xx-large;
+		font-weight: normal !important;
 		@apply text-glowing;
 	}
 	.h3 {
 		font-family: var(--main-font) !important;
 		text-decoration-line: underline;
 		font-size: x-large;
+		font-weight: normal !important;
 		@apply text-glowing;
 	}
 }

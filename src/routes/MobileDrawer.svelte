@@ -38,7 +38,7 @@
 						bind:rotation={icon_rotation}
 						Icon={PlebisOnlineActive}
 						size={42}
-						className="drop-shadow-[0_0_6px_#D25401]"
+						className="drop-shadow-[0px_0px_8px_#D25401]"
 					/>
 					<h2 class="h2">Plebis Online</h2>
 				</div>
