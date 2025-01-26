@@ -7,11 +7,10 @@
 	<meta name="description" content={m.example()} />
 </svelte:head>
 
-<h2 class="h2">Plebis Online</h2>
-<p>Some Cool Banner and Animations from Ingame stuff</p>
+<h2 class="h2">Some Cool Banner</h2>
 
 <div class="container mx-auto">
 	<h2 class="h2">Real Content</h2>
-	<p>Readable Content should be wrapped inside a containter like</p>
+	<p>Readable Content should be wrapped inside a container, like:</p>
 	<h2 class="h2">{m.example()}</h2>
 </div>

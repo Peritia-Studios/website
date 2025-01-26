@@ -3,11 +3,14 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+	:root {
+		--main-font: PlebisOnline, LatinMod;
+	}
 	html {
 		@apply h-full;
 	}
 	body {
-		font-family: PlebisOnline;
+		font-family: var(--main-font);
 		background-image: radial-gradient(
 				at 20% 10%,
 				rgba(var(--color-secondary-500) / 0.075) 0px,
@@ -27,22 +30,28 @@
 		font-weight: normal;
 		font-style: normal;
 	}
+	@font-face {
+		font-family: 'LatinMod';
+		src: url('/LatinMod.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
 	p,
 	a,
 	li {
 		font-size: x-large;
 	}
 	.anchor {
-		font-family: PlebisOnline !important;
+		font-family: var(--main-font) !important;
 		font-size: x-large !important;
 	}
 	.h2 {
-		font-family: PlebisOnline !important;
+		font-family: var(--main-font) !important;
 		font-weight: 700;
 		font-size: xx-large;
 	}
 	.h3 {
-		font-family: PlebisOnline !important;
+		font-family: var(--main-font) !important;
 		font-weight: 700;
 		text-decoration-line: underline;
 		font-size: x-large;
