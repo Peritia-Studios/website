@@ -7,4 +7,6 @@
 	<meta name="description" content={m.nav_about()} />
 </svelte:head>
 
-<p>todo</p>
+<div class="content">
+	<p>todo</p>
+</div>

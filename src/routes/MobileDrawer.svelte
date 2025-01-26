@@ -34,7 +34,12 @@
 		{#snippet content()}
 			<header class="flex items-center justify-between">
 				<div class="flex items-center justify-start space-x-3">
-					<SpinningIcon bind:rotation={icon_rotation} Icon={PlebisOnlineActive} size={42} />
+					<SpinningIcon
+						bind:rotation={icon_rotation}
+						Icon={PlebisOnlineActive}
+						size={42}
+						className="drop-shadow-[0_0_6px_#D25401]"
+					/>
 					<h2 class="h2">Plebis Online</h2>
 				</div>
 				<button class="btn-icon" onclick={drawerClose}><X /></button>

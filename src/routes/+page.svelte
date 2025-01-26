@@ -1,5 +1,7 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
+
+	let loaded = false;
 </script>
 
 <svelte:head>
@@ -7,10 +9,18 @@
 	<meta name="description" content={m.example()} />
 </svelte:head>
 
-<h2 class="h2">Some Cool Banner</h2>
+<div class={loaded ? '' : 'placeholder animate-pulse'}>
+	<img
+		src="banner.png"
+		alt="Banner"
+		onload={() => (loaded = true)}
+		class="aspect-[21/9] w-full object-cover transition-opacity duration-300 {loaded
+			? 'opacity-100'
+			: ' opacity-0'}"
+		loading="lazy"
+	/>
+</div>
 
-<div class="container mx-auto">
-	<h2 class="h2">Real Content</h2>
-	<p>Readable Content should be wrapped inside a container, like:</p>
-	<h2 class="h2">{m.example()}</h2>
+<div class="content">
+	<h2 class="text-glowing h2">{m.example()}</h2>
 </div>

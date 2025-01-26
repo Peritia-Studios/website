@@ -18,7 +18,7 @@
 			</div>
 		</header>
 
-		<div class="w-full space-y-4 px-4 py-5 md:px-10">
+		<div class="w-full">
 			{@render children?.()}
 		</div>
 	</div>

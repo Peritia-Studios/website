@@ -41,19 +41,27 @@
 	li {
 		font-size: x-large;
 	}
+	.content {
+		@apply container mx-auto space-y-4 px-4 py-5 md:px-10;
+	}
+	.text-glowing {
+		text-shadow: 0px 0px 8px #d25401;
+		@apply !text-primary-500;
+	}
 	.anchor {
 		font-family: var(--main-font) !important;
 		font-size: x-large !important;
+		@apply text-glowing;
 	}
 	.h2 {
 		font-family: var(--main-font) !important;
-		font-weight: 700;
 		font-size: xx-large;
+		@apply text-glowing;
 	}
 	.h3 {
 		font-family: var(--main-font) !important;
-		font-weight: 700;
 		text-decoration-line: underline;
 		font-size: x-large;
+		@apply text-glowing;
 	}
 }

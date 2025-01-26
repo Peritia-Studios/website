@@ -21,7 +21,9 @@
 			bind:rotation={icon_rotation}
 			Icon={PlebisOnlineActive}
 			size={42}
-			className={real_route === '/' || real_route === '' ? '' : 'opacity-60'}
+			className={real_route === '/' || real_route === ''
+				? 'drop-shadow-[0_0_6px_#D25401]'
+				: 'opacity-80'}
 		/>
 	</a>
 	<a
