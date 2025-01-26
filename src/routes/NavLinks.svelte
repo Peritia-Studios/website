@@ -8,34 +8,36 @@
 	import Instagram from '$lib/components/icons/Instagram.svelte';
 	import PlebisOnlineActive from '$lib/components/icons/PlebisOnlineActive.svelte';
 	import SpinningIcon from '$lib/components/icons/SpinningIcon.svelte';
+	import MobileDrawer from './MobileDrawer.svelte';
 
 	let real_route = $derived(i18n.route(page.url.pathname));
 	let icon_rotation = $state(1);
 </script>
 
 <div class="flex items-center justify-start gap-6">
-	<div class="flex items-center">
-		<a href="/" title="Plebis Online" class="flex items-center justify-center">
-			<SpinningIcon
-				bind:rotation={icon_rotation}
-				Icon={PlebisOnlineActive}
-				size={42}
-				className={real_route === '/' || real_route === '' ? '' : 'opacity-60'}
-			/>
-		</a>
-	</div>
-	<div class="flex items-center justify-start gap-6">
-		<a
-			class="hover:underline {i18n.route(page.url.pathname) === '/updates' ? '' : 'opacity-60'}"
-			href="/updates"
-			title={m.nav_updates()}>{m.nav_updates()}</a
-		>
-		<a
-			class="hover:underline {i18n.route(page.url.pathname) === '/about' ? '' : 'opacity-60'}"
-			href="/about"
-			title={m.nav_about()}>{m.nav_about()}</a
-		>
-	</div>
+	<MobileDrawer bind:icon_rotation />
+	<a href="/" title={m.nav_home()} class="hidden items-center justify-center md:flex">
+		<SpinningIcon
+			bind:rotation={icon_rotation}
+			Icon={PlebisOnlineActive}
+			size={42}
+			className={real_route === '/' || real_route === '' ? '' : 'opacity-60'}
+		/>
+	</a>
+	<a
+		class="hidden hover:underline md:flex {i18n.route(page.url.pathname) === '/updates'
+			? ''
+			: 'opacity-60'}"
+		href="/updates"
+		title={m.nav_updates()}>{m.nav_updates()}</a
+	>
+	<a
+		class="hidden hover:underline md:flex {i18n.route(page.url.pathname) === '/about'
+			? ''
+			: 'opacity-60'}"
+		href="/about"
+		title={m.nav_about()}>{m.nav_about()}</a
+	>
 </div>
 <div class="flex items-center gap-2">
 	{#each availableLanguageTags as lang}
@@ -49,28 +51,13 @@
 	{/each}
 </div>
 <div class="flex items-center justify-end gap-1">
-	<a
-		class="bg-surface-none flex h-10 w-10 cursor-pointer items-center justify-center rounded-full p-2 hover:brightness-90 dark:hover:brightness-110"
-		href="https://todo.com/"
-		target="_blank"
-		title="Discord"
-	>
+	<a class="btn-icon" href="https://discord.com/" target="_blank" title="Discord">
 		<Discord size="20" />
 	</a>
-	<a
-		class="bg-surface-none flex h-10 w-10 cursor-pointer items-center justify-center rounded-full p-2 hover:brightness-90 dark:hover:brightness-110"
-		href="https://todo.com/"
-		target="_blank"
-		title="BlueSky"
-	>
+	<a class="btn-icon" href="https://bsky.app/" target="_blank" title="BlueSky">
 		<BlueSky size="20" />
 	</a>
-	<a
-		class="bg-surface-none flex h-10 w-10 cursor-pointer items-center justify-center rounded-full p-2 hover:brightness-90 dark:hover:brightness-110"
-		href="https://todo.com/"
-		target="_blank"
-		title="Instagram"
-	>
+	<a class="btn-icon" href="https://instagram.com/" target="_blank" title="Instagram">
 		<Instagram size="20" />
 	</a>
 </div>

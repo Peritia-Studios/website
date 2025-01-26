@@ -32,6 +32,10 @@
 	li {
 		font-size: x-large;
 	}
+	.anchor {
+		font-family: PlebisOnline !important;
+		font-size: x-large !important;
+	}
 	.h2 {
 		font-family: PlebisOnline !important;
 		font-weight: 700;

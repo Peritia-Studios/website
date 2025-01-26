@@ -8,6 +8,10 @@
 </svelte:head>
 
 <h2 class="h2">Plebis Online</h2>
-<p>
-	{m.example()}
-</p>
+<p>Some Cool Banner and Animations from Ingame stuff</p>
+
+<div class="container mx-auto">
+	<h2 class="h2">Real Content</h2>
+	<p>Readable Content should be wrapped inside a containter like</p>
+	<h2 class="h2">{m.example()}</h2>
+</div>

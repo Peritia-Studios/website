@@ -12,13 +12,13 @@
 			class="sticky top-0 z-50 flex h-[70px] w-full items-center border-b-[1px] border-surface-500/20 bg-surface-50/90 backdrop-blur dark:bg-surface-950/90"
 		>
 			<div
-				class="container mx-auto grid max-w-screen-2xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 xl:grid-cols-[1fr_auto_1fr] xl:px-10"
+				class="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 px-4 md:grid-cols-[1fr_auto_1fr] md:px-10"
 			>
 				<NavLinks />
 			</div>
 		</header>
 
-		<div class="container mx-auto space-y-4 px-4 py-5 xl:px-10">
+		<div class="w-full space-y-4 px-4 py-5 md:px-10">
 			{@render children?.()}
 		</div>
 	</div>
