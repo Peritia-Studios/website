@@ -16,7 +16,12 @@
 		{loaded ? 'opacity-100' : 'opacity-0'}"
 		ontimeupdate={() => (loaded = true)}
 		onwaiting={() => (loading = true)}
-		oncanplay={() => (loading = false)}
+		oncanplay={() => {
+			loading = false;
+			loaded = true;
+		}}
+		playsinline
+		disablepictureinpicture
 		autoplay
 		loop
 		muted
