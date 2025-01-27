@@ -40,7 +40,7 @@
 						size={42}
 						className="drop-shadow-[0px_0px_8px_#D25401]"
 					/>
-					<h2 class="h2">Plebis Online</h2>
+					<h2 class="h2"><span class="text-glowing">Plebis Online</span></h2>
 				</div>
 				<button class="btn-icon" onclick={drawerClose}><X /></button>
 			</header>

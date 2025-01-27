@@ -47,24 +47,21 @@
 	}
 	.text-glowing {
 		text-shadow: 0px 0px 8px #d25401;
-		@apply !text-primary-500;
+		@apply bg-gradient-to-br from-[#FAC201] from-[40%] to-[#C91500] to-[95%] box-decoration-clone bg-clip-text !text-transparent;
 	}
 	.anchor {
 		font-family: var(--main-font) !important;
 		font-size: x-large !important;
-		@apply text-glowing;
 	}
 	.h2 {
 		font-family: var(--main-font) !important;
 		font-size: xx-large;
 		font-weight: normal !important;
-		@apply text-glowing;
 	}
 	.h3 {
 		font-family: var(--main-font) !important;
 		text-decoration-line: underline;
 		font-size: x-large;
 		font-weight: normal !important;
-		@apply text-glowing;
 	}
 }
