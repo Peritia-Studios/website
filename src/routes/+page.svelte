@@ -29,4 +29,5 @@
 
 <div class="content">
 	<h2 class="h2"><span class="text-glowing">{m.example()}</span></h2>
+	<p>Ole, du Hund, schick mal Banner Video!</p>
 </div>
