@@ -40,6 +40,7 @@
 	a,
 	li {
 		font-size: x-large;
+		line-height: 1.1;
 	}
 	.content {
 		@apply container mx-auto space-y-4 px-4 py-5 md:px-10;
