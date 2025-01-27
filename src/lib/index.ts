@@ -7,9 +7,9 @@ export interface Update {
 
 export let updates: Update[] = [
 	{
-		title: 'Betas',
+		title: 'Alphas',
 		date: '10.02.2024',
-		version: 'betas',
+		version: 'alphas',
 		description: 'Playtester only builds! No major public releases until this point.'
 	}
 ];
