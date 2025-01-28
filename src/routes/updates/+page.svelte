@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { updates } from '$lib';
+	import { i18n } from '$lib/i18n';
 	import * as m from '$lib/paraglide/messages';
 	import { Accordion } from '@skeletonlabs/skeleton-svelte';
 	import { onMount } from 'svelte';
 
 	let value = $state(['']);
+	let locale = $derived(i18n.getLanguageFromUrl(page.url));
 	onMount(() => {
 		value = [page.url.searchParams.get('version') || updates[0].version];
 		let el = document.getElementById(value[0]);
@@ -28,7 +30,7 @@
 					{#snippet control()}
 						<div class="flex items-center justify-between">
 							<p class="text-glowing">{title}</p>
-							<p>{date}</p>
+							<p>{date.toLocaleString(undefined, { locale })}</p>
 						</div>
 					{/snippet}
 					{#snippet panel()}<p>{@html description}</p>{/snippet}

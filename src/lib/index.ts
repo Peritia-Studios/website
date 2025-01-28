@@ -1,6 +1,8 @@
+import { DateTime } from 'luxon';
+
 export interface Update {
 	title: string;
-	date: string;
+	date: DateTime;
 	version: string;
 	description: string;
 }
@@ -8,7 +10,7 @@ export interface Update {
 export let updates: Update[] = [
 	{
 		title: 'Alphas',
-		date: '10.02.2024',
+		date: DateTime.fromISO('2024-02-10'),
 		version: 'alphas',
 		description: 'Playtester only builds! No major public releases until this point.'
 	}
