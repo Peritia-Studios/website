@@ -4,10 +4,12 @@ export const i18n = createI18n(runtime, {
 	pathnames: {
 		'/about': {
 			en: '/about-us',
+			de: '/ueber-uns',
 			la: '/de-nobis'
 		},
 		'/updates': {
 			en: '/updates',
+			de: '/updates',
 			la: '/renovationes'
 		}
 	}

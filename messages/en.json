@@ -1,6 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"nav_home": "Home",
+	"nav_home": "Homepage",
 	"nav_updates": "Updates",
 	"nav_about": "About Us",
 	"updates_description": "You can find all our latest updates here, exclusively in English",
