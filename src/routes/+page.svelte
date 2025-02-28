@@ -10,9 +10,9 @@
 	<meta name="description" content={m.example()} />
 </svelte:head>
 
-<div class={loaded && !loading ? '' : 'placeholder animate-pulse'}>
+<div class={loaded && !loading ? '' : 'placeholder animate-pulse rounded-none'}>
 	<video
-		class="aspect-[21/9] w-full object-cover transition-opacity duration-300
+		class="aspect-21/9 w-full object-cover transition-opacity duration-300
 		{loaded ? 'opacity-100' : 'opacity-0'}"
 		ontimeupdate={() => (loaded = true)}
 		onwaiting={() => (loading = true)}

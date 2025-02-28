@@ -1,63 +1,84 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/vintage';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+@custom-variant dark (&:is(*));
 
 @layer base {
 	:root {
 		--main-font: PlebisOnline, LatinMod;
 	}
+
 	html {
 		@apply h-full;
 	}
+
 	body {
 		font-family: var(--main-font);
-		background-image: radial-gradient(
-				at 20% 10%,
-				rgba(var(--color-secondary-500) / 0.075) 0px,
-				transparent 40%
-			),
-			radial-gradient(at 75% 10%, rgba(var(--color-primary-500) / 0.075) 0px, transparent 50%);
 		background-attachment: fixed;
+		background-image:
+			radial-gradient(
+				at 0% 25%,
+				color-mix(in oklab, var(--color-primary-500) 10%, transparent) 0px,
+				transparent 30%
+			),
+			radial-gradient(
+				at 15% 6%,
+				color-mix(in oklab, var(--color-success-500) 5%, transparent) 0px,
+				transparent 30%
+			);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		overflow-x: hidden;
-		@apply h-full;
 	}
+
 	@font-face {
 		font-family: 'PlebisOnline';
 		src: url('/PlebisOnline.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
+
 	@font-face {
 		font-family: 'LatinMod';
 		src: url('/LatinMod.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
+
 	p,
 	a,
 	li {
 		font-size: x-large;
 		line-height: 1.1;
 	}
+
 	.content {
 		@apply container mx-auto space-y-4 px-4 py-5 md:px-10;
 	}
+
 	.text-glowing {
 		text-shadow: 0px 0px 8px #d25401;
-		@apply bg-gradient-to-br from-[#FAC201] from-[40%] to-[#C91500] to-[95%] box-decoration-clone bg-clip-text !text-transparent;
+		@apply bg-linear-to-br from-[#FAC201] from-40% to-[#C91500] to-95% box-decoration-clone bg-clip-text text-transparent!;
 	}
+
 	.anchor {
 		font-family: var(--main-font) !important;
 		font-size: x-large !important;
 	}
+
 	.h2 {
 		font-family: var(--main-font) !important;
 		font-size: xx-large;
 		font-weight: normal !important;
 	}
+
 	.h3 {
 		font-family: var(--main-font) !important;
 		text-decoration-line: underline;

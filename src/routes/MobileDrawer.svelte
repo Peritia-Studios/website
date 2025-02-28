@@ -21,7 +21,8 @@
 
 <div class="md:hidden">
 	<Modal
-		bind:open={drawerState}
+		open={drawerState}
+		onOpenChange={(e) => (drawerState = e.open)}
 		triggerBase="btn-icon"
 		contentBase="bg-surface-100-900 p-4 space-y-4 shadow-xl w-[320px] h-screen"
 		positionerJustify="justify-start"
