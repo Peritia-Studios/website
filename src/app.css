@@ -65,7 +65,11 @@
 
 	.text-glowing {
 		text-shadow: 0px 0px 8px #d25401;
-		@apply bg-linear-to-br from-[#FAC201] from-40% to-[#C91500] to-95% box-decoration-clone bg-clip-text text-transparent!;
+		@apply bg-linear-to-br from-[#ccfa01] from-35% to-[#c91500] to-95% box-decoration-clone bg-clip-text text-transparent!;
+	}
+
+	.icon-glowing {
+		@apply drop-shadow-[0px_0px_8px_#d25401];
 	}
 
 	.anchor {

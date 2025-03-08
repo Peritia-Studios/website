@@ -6,24 +6,18 @@
 	import Discord from '$lib/components/icons/Discord.svelte';
 	import BlueSky from '$lib/components/icons/BlueSky.svelte';
 	import Instagram from '$lib/components/icons/Instagram.svelte';
-	import PlebisOnlineActive from '$lib/components/icons/PlebisOnlineActive.svelte';
-	import SpinningIcon from '$lib/components/icons/SpinningIcon.svelte';
 	import MobileDrawer from './MobileDrawer.svelte';
+	import PlebisOnline from '$lib/components/icons/PlebisOnline.svelte';
 
 	let real_route = $derived(i18n.route(page.url.pathname));
-	let icon_rotation = $state(1);
 </script>
 
 <div class="flex items-center justify-start gap-6">
-	<MobileDrawer bind:icon_rotation />
+	<MobileDrawer />
 	<a href="/" title={m.nav_home()} class="hidden items-center justify-center md:flex">
-		<SpinningIcon
-			bind:rotation={icon_rotation}
-			Icon={PlebisOnlineActive}
+		<PlebisOnline
 			size={42}
-			className={real_route === '/' || real_route === ''
-				? 'drop-shadow-[0px_0px_8px_#D25401]'
-				: 'opacity-80'}
+			class={real_route === '/' || real_route === '' ? 'icon-glowing' : 'opacity-80'}
 		/>
 	</a>
 	<a

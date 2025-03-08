@@ -1,17 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import PlebisOnlineActive from '$lib/components/icons/PlebisOnlineActive.svelte';
-	import SpinningIcon from '$lib/components/icons/SpinningIcon.svelte';
+	import PlebisOnline from '$lib/components/icons/PlebisOnline.svelte';
 	import { i18n } from '$lib/i18n';
 	import * as m from '$lib/paraglide/messages';
 	import { Modal } from '@skeletonlabs/skeleton-svelte';
 	import { Menu, X } from 'lucide-svelte';
 
-	interface Props {
-		icon_rotation: number;
-	}
-
-	let { icon_rotation = $bindable(0) }: Props = $props();
 	let drawerState = $state(false);
 
 	function drawerClose() {
@@ -34,13 +28,8 @@
 		{#snippet trigger()}<Menu />{/snippet}
 		{#snippet content()}
 			<header class="flex items-center justify-between">
-				<div class="flex items-center justify-start space-x-3">
-					<SpinningIcon
-						bind:rotation={icon_rotation}
-						Icon={PlebisOnlineActive}
-						size={42}
-						className="drop-shadow-[0px_0px_8px_#D25401]"
-					/>
+				<div class="itsems-center flex justify-start space-x-3">
+					<PlebisOnline size={42} class="icon-glowing" />
 					<h2 class="h2"><span class="text-glowing">Plebis Online</span></h2>
 				</div>
 				<button class="btn-icon" onclick={drawerClose}><X /></button>
