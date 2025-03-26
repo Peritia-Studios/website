@@ -1,4 +1,5 @@
 import { DateTime } from 'luxon';
+import { writable } from 'svelte/store';
 
 export interface Update {
 	title: string;
@@ -15,3 +16,5 @@ export let updates: Update[] = [
 		description: 'Playtester only builds! No major public releases until this point.'
 	}
 ];
+
+export const videoTime = writable(0);
