@@ -1,4 +1,6 @@
 import { DateTime } from 'luxon';
+import Discord from '$lib/components/icons/Discord.svelte';
+import Instagram from '$lib/components/icons/Instagram.svelte';
 import { writable } from 'svelte/store';
 
 export interface Update {
@@ -18,3 +20,22 @@ export let updates: Update[] = [
 ];
 
 export const videoTime = writable(0);
+
+export const links = [
+	{
+		name: 'Discord',
+		icon: Discord,
+		url: 'https://discord.gg/vBz8uYgdfr'
+	},
+	{
+		name: 'Instagram',
+		icon: Instagram,
+		url: 'https://www.instagram.com/plebis_online/'
+	}
+	// Hidden due to missing url
+	// {
+	// 	name: 'BlueSky',
+	// 	icon: BlueSky,
+	// 	url: ''
+	// }
+];

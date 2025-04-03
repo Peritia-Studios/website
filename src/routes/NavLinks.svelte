@@ -8,6 +8,7 @@
 	import Instagram from '$lib/components/icons/Instagram.svelte';
 	import MobileDrawer from './MobileDrawer.svelte';
 	import PlebisOnline from '$lib/components/icons/PlebisOnline.svelte';
+	import { links } from '$lib';
 
 	let real_route = $derived(i18n.route(page.url.pathname));
 </script>
@@ -47,13 +48,9 @@
 	{/each}
 </div>
 <div class="flex items-center justify-end gap-1">
-	<a class="btn-icon" href="https://discord.com/" target="_blank" title="Discord">
-		<Discord size="20" />
-	</a>
-	<a class="btn-icon" href="https://bsky.app/" target="_blank" title="BlueSky">
-		<BlueSky size="20" />
-	</a>
-	<a class="btn-icon" href="https://instagram.com/" target="_blank" title="Instagram">
-		<Instagram size="20" />
-	</a>
+	{#each links as { name, icon: Icon, url }}
+		<a class="btn-icon" href={url} target="_blank" title={name}>
+			<Icon size="20" />
+		</a>
+	{/each}
 </div>
