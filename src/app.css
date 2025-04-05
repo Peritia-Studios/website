@@ -40,14 +40,14 @@
 
 	@font-face {
 		font-family: 'PlebisOnline';
-		src: url('/PlebisOnline.ttf') format('truetype');
+		src: url('/fonts/PlebisOnline.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
 
 	@font-face {
 		font-family: 'LatinMod';
-		src: url('/LatinMod.ttf') format('truetype');
+		src: url('/fonts/LatinMod.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
@@ -57,19 +57,6 @@
 	li {
 		font-size: x-large;
 		line-height: 1.1;
-	}
-
-	.content {
-		@apply container mx-auto space-y-4 px-4 py-5 md:px-10;
-	}
-
-	.text-glowing {
-		text-shadow: 0px 0px 8px #d25401;
-		@apply bg-linear-to-br from-[#ccfa01] from-35% to-[#c91500] to-95% box-decoration-clone bg-clip-text text-transparent!;
-	}
-
-	.icon-glowing {
-		@apply drop-shadow-[0px_0px_8px_#d25401];
 	}
 
 	.anchor {
@@ -89,4 +76,17 @@
 		font-size: x-large;
 		font-weight: normal !important;
 	}
+}
+
+@utility content {
+	@apply container mx-auto space-y-4 px-4 py-5 md:px-10;
+}
+
+@utility text-glowing {
+	text-shadow: 0px 0px 8px #d25401;
+	@apply bg-linear-to-br from-[#ccfa01] from-35% to-[#c91500] to-95% box-decoration-clone bg-clip-text text-transparent!;
+}
+
+@utility icon-glowing {
+	@apply drop-shadow-[0px_0px_8px_#d25401];
 }
