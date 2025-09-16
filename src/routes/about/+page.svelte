@@ -5,6 +5,9 @@
 <svelte:head>
 	<title>{m.nav_about()} - Plebis Online</title>
 	<meta name="description" content={m.nav_about()} />
+	<!-- Open Graph -->
+	<meta property="og:title" content="{m.nav_about()} - Plebis Online" />
+	<meta property="og:description" content={m.nav_about()} />
 </svelte:head>
 
 <div class="content">

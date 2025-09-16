@@ -50,6 +50,9 @@
 <svelte:head>
 	<title>Plebis Online</title>
 	<meta name="description" content={m.example()} />
+	<!-- Open Graph -->
+	<meta property="og:title" content="Plebis Online" />
+	<meta property="og:description" content={m.example()} />
 </svelte:head>
 
 <!-- Video banner -->

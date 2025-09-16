@@ -18,6 +18,9 @@
 <svelte:head>
 	<title>{m.nav_updates()} - Plebis Online</title>
 	<meta name="description" content={m.nav_updates()} />
+	<!-- Open Graph -->
+	<meta property="og:title" content="{m.nav_updates()} - Plebis Online" />
+	<meta property="og:description" content={m.nav_updates()} />
 </svelte:head>
 
 <div class="content">
