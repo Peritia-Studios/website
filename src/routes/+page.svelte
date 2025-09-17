@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { videoTime } from '$lib';
 	import * as m from '$lib/paraglide/messages';
-	import { onMount } from 'svelte';
+
+	import PictureCarousel from './PictureCarousel.svelte';
 
 	let loaded = $state(false);
 	let loading = $state(false);
 
-	let elemCarousel: HTMLDivElement;
-	let autoInterval: NodeJS.Timeout | undefined = $state();
-	let currentPicture = $state(0);
 	const pictures = [
 		'lounge.png',
 		'shooting_range.png',
@@ -20,31 +18,6 @@
 		'subway_1.png',
 		'subway_2.png'
 	];
-
-	onMount(() => (currentPicture = getCurrentPicture()));
-
-	function getCurrentPicture(): number {
-		let scrollLeft = elemCarousel?.scrollLeft || 0;
-		let clientWidth = elemCarousel?.clientWidth || 1;
-		return Math.round(scrollLeft / clientWidth);
-	}
-
-	function carouselThumbnail(index: number) {
-		elemCarousel?.scroll(elemCarousel.clientWidth * index, 0);
-	}
-
-	function newAutoScroll() {
-		autoInterval = setInterval(() => {
-			let newI = currentPicture + 1;
-			if (newI < pictures.length) {
-				carouselThumbnail(newI);
-			} else {
-				carouselThumbnail(0);
-			}
-		}, 5000);
-	}
-
-	newAutoScroll();
 </script>
 
 <svelte:head>
@@ -102,41 +75,6 @@
 			</p>
 		</div>
 
-		<div class="space-y-4">
-			<div
-				bind:this={elemCarousel}
-				onscroll={() => (currentPicture = getCurrentPicture())}
-				class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
-			>
-				{#each pictures as picture}
-					<img
-						class="rounded-container-token w-fit snap-center"
-						src="gameplay/{picture}"
-						alt={picture}
-						loading="lazy"
-					/>
-				{/each}
-			</div>
-
-			<div class="flex space-x-2">
-				{#each pictures as picture, i}
-					<button
-						type="button"
-						onclick={() => {
-							carouselThumbnail(i);
-							clearInterval(autoInterval);
-							newAutoScroll();
-						}}
-					>
-						<img
-							class={i == currentPicture ? 'outline-primary-500 outline outline-offset-2' : ''}
-							src="gameplay/{picture}"
-							alt={picture}
-							loading="lazy"
-						/>
-					</button>
-				{/each}
-			</div>
-		</div>
+		<PictureCarousel {pictures} />
 	</div>
 </div>
